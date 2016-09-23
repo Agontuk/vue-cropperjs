@@ -1,0 +1,29 @@
+{
+  "name": "vue-cropperjs",
+  "version": "1.0.0",
+  "description": "A Vue wrapper component for cropperjs",
+  "main": "src/VueCropper.js",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "cropper",
+    "cropperjs",
+    "component"
+  ],
+  "author": {
+    "name": "Iftekhar Rifat",
+    "email": "rifat662@gmail.com",
+    "url": "https://github.com/Agontuk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Agontuk/vue-cropperjs.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cropperjs": "~0.8.x"
+  },
+  "peerDependencies": {
+    "vue": "^1.0.26"
+  }
+}
