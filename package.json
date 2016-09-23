@@ -2,7 +2,7 @@
   "name": "vue-cropperjs",
   "version": "1.0.0",
   "description": "A Vue wrapper component for cropperjs",
-  "main": "src/VueCropper.js",
+  "main": "VueCropper.js",
   "keywords": [
     "vue",
     "vuejs",
