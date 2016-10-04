@@ -24,6 +24,6 @@
     "cropperjs": "~0.8.x"
   },
   "peerDependencies": {
-    "vue": "^1.0.26"
+    "vue": "^2"
   }
 }

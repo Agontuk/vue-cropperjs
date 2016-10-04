@@ -4,24 +4,26 @@ var Cropper = require('cropperjs').default;
 require('cropperjs/dist/cropper.css');
 
 var CropperComponent = Vue.extend({
-    template: `
-        <div :style="style">
-            <img
-                v-el:img
-                :src="src"
-                :alt="[ alt === undefined ? 'image': alt ]"
-                style="max-width: 100%;"
-                :style="imgStyle"
-            />
-        </div>
-    `,
+    render: function (h) {
+      return h('div', {style: this.style}, [
+        h('img', {
+          ref: 'img',
+          attrs: {
+            src: this.src,
+            alt: this.alt || 'image',
+            style: {'max-width': '100%'},
+          },
+          style: this.imgStyle
+        })
+      ])
+    },
     props: {
         'style': Object,
         'data': Object,
         'preview': String,
         'src': {
             type: String,
-            required: true
+            default: ''
         },
         'alt': String,
         'imgStyle': String,
@@ -116,14 +118,14 @@ var CropperComponent = Vue.extend({
         'minContainerHeight': Number,
 
         // callbacks
-        'ready': Function,
-        'cropstart': Function,
-        'cropmove': Function,
-        'cropend': Function,
-        'crop': Function,
-        'zoom': Function,
+        // 'ready': Function,
+        // 'cropstart': Function,
+        // 'cropmove': Function,
+        // 'cropend': Function,
+        // 'crop': Function,
+        // 'zoom': Function,
     },
-    ready () {
+    mounted: function () {
         var data = omit(this.$options.props, ['style', 'src', 'alt', 'imgStyle']);
         var props = {};
         for (var key in data) {
@@ -132,7 +134,7 @@ var CropperComponent = Vue.extend({
             }
         }
 
-        this.cropper = new Cropper(this.$els.img, props);
+        this.cropper = new Cropper(this.$refs.img, props);
     },
     methods: {
         reset () {
