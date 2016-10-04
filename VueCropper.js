@@ -11,7 +11,7 @@ var CropperComponent = Vue.extend({
           attrs: {
             src: this.src,
             alt: '[' + this.alt === undefined ? 'image' : this.alt + ']',
-            style: {'max-width': '100%'},
+            style: 'max-width: 100%',
           },
           style: this.imgStyle
         })
