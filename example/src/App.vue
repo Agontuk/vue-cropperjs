@@ -5,7 +5,7 @@
             <!-- all cropperjs options should be in kebab-case instead of camelCase -->
             <!-- see http://vuejs.org/guide/components.html#camelCase-vs-kebab-case -->
             <vue-cropper
-                v-ref:cropper
+                ref='cropper'
                 :guides="true"
                 :view-mode="2"
                 drag-mode="crop"
@@ -29,19 +29,20 @@
 import VueCropper from 'vue-cropperjs';
 
 export default {
+    name: 'App',
     components: { VueCropper },
     data () {
         return {
-            imgSrc: require('./image.jpg'),
+            imgSrc: require('./assets/image.jpg'),
             cropImg: ''
         };
     },
     methods: {
         change () {
-            this.imgSrc = require('./image1.jpg');
+            this.imgSrc = require('./assets/image1.jpg');
 
             // rebuild cropperjs with the updated source
-            this.$refs.cropper.replace(require('./image1.jpg'));
+            this.$refs.cropper.replace(require('./assets/image1.jpg'));
         },
         cropImage () {
             // get image data for post processing, e.g. upload or setting image src
