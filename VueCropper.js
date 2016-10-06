@@ -122,8 +122,8 @@ var CropperComponent = Vue.extend({
         'cropstart': Function,
         'cropmove': Function,
         'cropend': Function,
-        'crop': Function,
-        'zoom': Function,
+        'crop': Function
+        // 'zoom': Function
     },
     mounted: function () {
         var data = omit(this.$options.props, ['style', 'src', 'alt', 'imgStyle']);
