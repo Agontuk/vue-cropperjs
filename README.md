@@ -6,6 +6,12 @@ A Vue wrapper component for [cropperjs](https://github.com/fengyuanchen/cropperj
 npm install --save vue-cropperjs
 ```
 
+For Vue 1.0, use
+
+```shell
+npm install --save vue-cropperjs@1.0.2
+```
+
 > You will also need css & style loader for webpack
 
 ## Usage
@@ -15,7 +21,7 @@ See the [example](https://github.com/Agontuk/vue-cropperjs/tree/master/example) 
 
 ### src
 * Type: `string`
-* Required: `true`
+* Required: `false`
 
 ### style
 * Type: `object`
