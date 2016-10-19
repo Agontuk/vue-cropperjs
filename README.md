@@ -9,7 +9,7 @@ npm install --save vue-cropperjs
 For Vue 1.0, use
 
 ```shell
-npm install --save vue-cropperjs@1.0.2
+npm install --save vue-cropperjs@1.0.3
 ```
 
 > You will also need css & style loader for webpack
