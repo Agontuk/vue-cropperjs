@@ -1,17 +1,19 @@
+'use strict';
+
 var Vue = require('vue');
 var omit = require('lodash/omit');
 var Cropper = require('cropperjs').default;
 require('cropperjs/dist/cropper.css');
 
 var CropperComponent = Vue.extend({
-    render: function (h) {
+    render: function render(h) {
         return h('div', { style: this.style }, [
             h('img', {
                 ref: 'img',
                 attrs: {
                     src: this.src,
                     alt: this.alt || 'image',
-                    style: { 'max-width': '100%' },
+                    style: { 'max-width': '100%' }
                 },
                 style: this.imgStyle
             })
@@ -125,7 +127,7 @@ var CropperComponent = Vue.extend({
         'crop': Function
         // 'zoom': Function
     },
-    mounted: function () {
+    mounted: function mounted() {
         var data = omit(this.$options.props, ['style', 'src', 'alt', 'imgStyle']);
         var props = {};
         for (var key in data) {
@@ -137,82 +139,82 @@ var CropperComponent = Vue.extend({
         this.cropper = new Cropper(this.$refs.img, props);
     },
     methods: {
-        reset () {
+        reset: function reset() {
             return this.cropper.reset();
         },
-        clear () {
+        clear: function clear() {
             return this.cropper.clear();
         },
-        replace (url, onlyColorChanged) {
+        replace: function replace(url, onlyColorChanged) {
             return this.cropper.replace(url, onlyColorChanged);
         },
-        enable () {
+        enable: function enable() {
             return this.cropper.enable();
         },
-        disable () {
+        disable: function disable() {
             return this.cropper.disable();
         },
-        destroy () {
+        destroy: function destroy() {
             return this.cropper.destroy();
         },
-        move (offsetX, offsetY) {
+        move: function move(offsetX, offsetY) {
             return this.cropper.move(offsetX, offsetY);
         },
-        moveTo (x, y) {
+        moveTo: function moveTo(x, y) {
             return this.cropper.moveTo(x, y);
         },
-        zoom (ratio, _originalEvent) {
+        zoom: function zoom(ratio, _originalEvent) {
             return this.cropper.zoom(ratio, _originalEvent);
         },
-        zoomTo (ratio, _originalEvent) {
+        zoomTo: function zoomTo(ratio, _originalEvent) {
             return this.cropper.zoomTo(ratio, _originalEvent);
         },
-        rotate (degree) {
+        rotate: function rotate(degree) {
             return this.cropper.rotate(degree);
         },
-        rotateTo (degree) {
+        rotateTo: function rotateTo(degree) {
             return this.cropper.rotateTo(degree);
         },
-        scale (scaleX, scaleY) {
+        scale: function scale(scaleX, scaleY) {
             return this.cropper.scale(scaleX, scaleY);
         },
-        scaleX (scaleX) {
-            return this.cropper.scaleX(scaleX);
+        scaleX: function scaleX(_scaleX) {
+            return this.cropper.scaleX(_scaleX);
         },
-        scaleY (scaleY) {
-            return this.cropper.scaleY(scaleY);
+        scaleY: function scaleY(_scaleY) {
+            return this.cropper.scaleY(_scaleY);
         },
-        getData (rounded) {
+        getData: function getData(rounded) {
             return this.cropper.getData(rounded);
         },
-        setData (data) {
+        setData: function setData(data) {
             return this.cropper.setData(data);
         },
-        getContainerData () {
+        getContainerData: function getContainerData() {
             return this.cropper.getContainerData();
         },
-        getImageData () {
+        getImageData: function getImageData() {
             return this.cropper.getImageData();
         },
-        getCanvasData () {
+        getCanvasData: function getCanvasData() {
             return this.cropper.getCanvasData();
         },
-        setCanvasData (data) {
+        setCanvasData: function setCanvasData(data) {
             return this.cropper.setCanvasData(data);
         },
-        getCropBoxData () {
+        getCropBoxData: function getCropBoxData() {
             return this.cropper.getCropBoxData();
         },
-        setCropBoxData (data) {
+        setCropBoxData: function setCropBoxData(data) {
             return this.cropper.setCropBoxData(data);
         },
-        getCroppedCanvas (options) {
+        getCroppedCanvas: function getCroppedCanvas(options) {
             return this.cropper.getCroppedCanvas(options);
         },
-        setAspectRatio (aspectRatio) {
+        setAspectRatio: function setAspectRatio(aspectRatio) {
             return this.cropper.setAspectRatio(aspectRatio);
         },
-        setDragMode () {
+        setDragMode: function setDragMode() {
             return this.cropper.setDragMode();
         }
     }
