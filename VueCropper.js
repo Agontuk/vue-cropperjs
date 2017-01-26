@@ -27,7 +27,7 @@ var CropperComponent = Vue.extend({
             default: ''
         },
         'alt': String,
-        'imgStyle': String,
+        'imgStyle': Object,
         'dragMode': String,
         'responsive': {
             type: Boolean,
