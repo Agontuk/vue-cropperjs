@@ -14,7 +14,8 @@
                 :min-container-height="180"
                 :background="true"
                 :rotatable="true"
-                :src="imgSrc">
+                :src="imgSrc"
+                :imgStyle="{ height: '300px' }">
             </vue-cropper>
         </div>
         <img :src="cropImg" style="max-width: 300px;" />
