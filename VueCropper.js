@@ -12,10 +12,9 @@ var CropperComponent = Vue.extend({
                 ref: 'img',
                 attrs: {
                     src: this.src,
-                    alt: this.alt || 'image',
-                    style: { 'max-width': '100%' }
+                    alt: this.alt || 'image'
                 },
-                style: this.imgStyle
+                style: this.imgStyle || { 'max-width': '100%' }
             })
         ]);
     },
@@ -28,7 +27,7 @@ var CropperComponent = Vue.extend({
             default: ''
         },
         'alt': String,
-        'imgStyle': String,
+        'imgStyle': Object,
         'dragMode': String,
         'responsive': {
             type: Boolean,
