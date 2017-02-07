@@ -15,16 +15,26 @@
                 :background="true"
                 :rotatable="true"
                 :src="imgSrc"
-                :imgStyle="{ height: '300px' }">
+                :imgStyle="{ height: '300px' }"
+                :cropmove="cropImage">
             </vue-cropper>
         </div>
-        <img :src="cropImg" style="max-width: 300px;" />
+        <img
+            :src="cropImg"
+            style="width: 200px; height: 150px; border: 1px solid gray"
+            alt="Cropped Image"
+        />
         <br />
-        <button @click="cropImage">Crop Image</button>
         <button @click="rotate">Rotate</button>
         <button @click="change">Change Image</button>
     </div>
 </template>
+
+<style>
+    #app {
+        text-align: center;
+    }
+</style>
 
 <script>
 import VueCropper from 'vue-cropperjs';
