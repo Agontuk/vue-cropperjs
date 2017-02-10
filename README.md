@@ -1,6 +1,9 @@
 # vue-cropperjs
 A Vue wrapper component for [cropperjs](https://github.com/fengyuanchen/cropperjs).
 
+## Demo
+Checkout here **[agontuk.github.io/vue-cropperjs](https://agontuk.github.io/vue-cropperjs/)**
+
 ## Installation
 ```shell
 npm install --save vue-cropperjs

@@ -4,16 +4,32 @@ const App = {
     name: 'App',
     data () {
         return {
-            imgSrc: require('./assets/images/image.jpg'),
+            imgSrc: '',
             cropImg: ''
         };
     },
     methods: {
-        change () {
-            this.imgSrc = require('./assets/images/image1.jpg');
+        setImage (e) {
+            const file = e.target.files[0];
 
-            // rebuild cropperjs with the updated source
-            this.$refs.cropper.replace(require('./assets/images/image1.jpg'));
+            if (!file.type.includes('image/')) {
+                alert('Please select an image file');
+                return;
+            }
+
+            if (typeof FileReader === 'function') {
+                const reader = new FileReader();
+
+                reader.onload = (event) => {
+                    this.imgSrc = event.target.result;
+                    // rebuild cropperjs with the updated source
+                    this.$refs.cropper.replace(event.target.result);
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                alert('Sorry, FileReader API not supported');
+            }
         },
         cropImage () {
             // get image data for post processing, e.g. upload or setting image src
@@ -30,6 +46,13 @@ const App = {
     render(h) {
         return (
             <div id="app">
+                <h2 style="margin: 0;">Vue CropperJS</h2>
+                <hr />
+                <input type="file" name="image" accept="image/*"
+                    style="font-size: 1.2em; padding: 10px 0;"
+                    on-change={this.setImage}
+                />
+                <br />
                 <div style="max-width: 900px; display: inline-block;">
                     <vue-cropper
                         ref='cropper'
@@ -42,7 +65,8 @@ const App = {
                         background={true}
                         rotatable={true}
                         src={this.imgSrc}
-                        imgStyle={{ 'height': '300px' }}
+                        alt="Source Image"
+                        imgStyle={{ width: '400px', 'height': '300px' }}
                         cropmove={this.cropImage}>
                     </vue-cropper>
                 </div>
@@ -52,8 +76,8 @@ const App = {
                     alt="Cropped Image"
                 />
                 <br />
-                <button on-click={this.rotate}>Rotate</button>
-                <button on-click={this.change}>Change Image</button>
+
+                { !!this.imgSrc && <button on-click={this.rotate}>Rotate</button> }
             </div>
         );
     }
