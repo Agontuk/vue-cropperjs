@@ -1,6 +1,8 @@
 # vue-cropperjs
 A Vue wrapper component for [cropperjs](https://github.com/fengyuanchen/cropperjs).
 
+[![NPM](https://nodei.co/npm/vue-cropperjs.png?downloads=true)](https://nodei.co/npm/vue-cropperjs/)
+
 ## Demo
 Checkout here **[agontuk.github.io/vue-cropperjs](https://agontuk.github.io/vue-cropperjs/)**
 
