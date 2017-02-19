@@ -214,8 +214,8 @@ var CropperComponent = Vue.extend({
         setAspectRatio: function setAspectRatio(aspectRatio) {
             return this.cropper.setAspectRatio(aspectRatio);
         },
-        setDragMode: function setDragMode() {
-            return this.cropper.setDragMode();
+        setDragMode: function setDragMode(mode) {
+            return this.cropper.setDragMode(mode);
         }
     }
 });
