@@ -13,7 +13,7 @@
     <img :src="cropImg" style="width: 200px; height: 150px; border: 1px solid gray" alt="Cropped Image" />
     <br/>
 
-    <button @click="rotate">Rotate</button>
+    <button @click="rotate" v-if="imgSrc != ''">Rotate</button>
   </div>
 
 </template>
