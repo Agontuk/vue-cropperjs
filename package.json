@@ -2,7 +2,7 @@
   "name": "vue-cropperjs",
   "version": "2.0.4",
   "description": "A Vue wrapper component for cropperjs",
-  "main": "VueCropper.js",
+  "main": "dist/VueCropper.js",
   "keywords": [
     "vue",
     "vuejs",
@@ -10,6 +10,9 @@
     "cropperjs",
     "component"
   ],
+  "scripts": {
+    "build": "babel -d dist VueCropper.js"
+  },
   "author": {
     "name": "Iftekhar Rifat",
     "email": "rifat662@gmail.com",
@@ -26,5 +29,9 @@
   },
   "peerDependencies": {
     "vue": ">=2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0"
   }
 }
