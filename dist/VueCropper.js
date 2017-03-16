@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
 var _lodash = require('lodash.omit');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -16,7 +20,7 @@ require('cropperjs/dist/cropper.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CropperComponent = {
+var CropperComponent = _vue2.default.extend({
     render: function render(h) {
         return h('div', { style: this.style }, [h('img', {
             ref: 'img',
@@ -229,6 +233,8 @@ var CropperComponent = {
             return this.cropper.setDragMode(mode);
         }
     }
-};
+});
+
+var VueCropper = _vue2.default.component('vue-cropper', CropperComponent);
 
 exports.default = VueCropper;

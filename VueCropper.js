@@ -1,8 +1,9 @@
+import Vue from 'vue';
 import omit from 'lodash.omit';
 import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css';
 
-const CropperComponent = {
+const CropperComponent = Vue.extend({
     render(h) {
         return h('div', { style: this.style }, [
             h('img', {
@@ -215,6 +216,8 @@ const CropperComponent = {
             return this.cropper.setDragMode(mode);
         }
     }
-};
+});
+
+const VueCropper = Vue.component('vue-cropper', CropperComponent);
 
 export default VueCropper;
