@@ -24,14 +24,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cropperjs": "~0.8.x",
-    "lodash.omit": "^4.5.0"
+    "cropperjs": "~0.8.x"
   },
   "peerDependencies": {
     "vue": ">=2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.0"
   }
 }

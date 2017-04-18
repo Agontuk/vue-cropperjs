@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import omit from 'lodash.omit';
 import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css';
 
@@ -126,8 +125,9 @@ const CropperComponent = Vue.extend({
         // 'zoom': Function
     },
     mounted() {
-        const data = omit(this.$options.props, ['style', 'src', 'alt', 'imgStyle']);
+        const { style, src, alt, imgStyle, ...data } = this.$options.props;
         const props = {};
+
         for (const key in data) {
             if (this[key] !== undefined) {
                 props[key] = this[key];

@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --open --inline --hot"
   },
   "dependencies": {
-    "vue": "^2.0.1",
+    "vue": ">=2.0.0",
     "vue-cropperjs": "^2.1.0"
   },
   "devDependencies": {

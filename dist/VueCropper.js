@@ -8,10 +8,6 @@ var _vue = require('vue');
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _lodash = require('lodash.omit');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _cropperjs = require('cropperjs');
 
 var _cropperjs2 = _interopRequireDefault(_cropperjs);
@@ -19,6 +15,8 @@ var _cropperjs2 = _interopRequireDefault(_cropperjs);
 require('cropperjs/dist/cropper.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var CropperComponent = _vue2.default.extend({
     render: function render(h) {
@@ -142,8 +140,15 @@ var CropperComponent = _vue2.default.extend({
         // 'zoom': Function
     },
     mounted: function mounted() {
-        var data = (0, _lodash2.default)(this.$options.props, ['style', 'src', 'alt', 'imgStyle']);
+        var _$options$props = this.$options.props,
+            style = _$options$props.style,
+            src = _$options$props.src,
+            alt = _$options$props.alt,
+            imgStyle = _$options$props.imgStyle,
+            data = _objectWithoutProperties(_$options$props, ['style', 'src', 'alt', 'imgStyle']);
+
         var props = {};
+
         for (var key in data) {
             if (this[key] !== undefined) {
                 props[key] = this[key];
