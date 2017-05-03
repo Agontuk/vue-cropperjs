@@ -20,7 +20,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 var CropperComponent = _vue2.default.extend({
     render: function render(h) {
-        return h('div', { style: this.style }, [h('img', {
+        return h('div', { style: this.containerStyle }, [h('img', {
             ref: 'img',
             attrs: {
                 src: this.src,
@@ -32,7 +32,7 @@ var CropperComponent = _vue2.default.extend({
     },
 
     props: {
-        'style': Object,
+        'containerStyle': Object,
         'data': Object,
         'preview': String,
         'src': {

@@ -28,7 +28,7 @@ See the [example](https://github.com/Agontuk/vue-cropperjs/tree/master/example) 
 * Type: `string`
 * Required: `false`
 
-### style
+### containerStyle
 * Type: `object`
 * Required: `false`
 

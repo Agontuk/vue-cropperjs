@@ -4,7 +4,7 @@ import 'cropperjs/dist/cropper.css';
 
 const CropperComponent = Vue.extend({
     render(h) {
-        return h('div', { style: this.style }, [
+        return h('div', { style: this.containerStyle }, [
             h('img', {
                 ref: 'img',
                 attrs: {
@@ -17,7 +17,7 @@ const CropperComponent = Vue.extend({
         ]);
     },
     props: {
-        'style': Object,
+        'containerStyle': Object,
         'data': Object,
         'preview': String,
         'src': {
