@@ -125,7 +125,7 @@ const CropperComponent = Vue.extend({
         // 'zoom': Function
     },
     mounted() {
-        const { style, src, alt, imgStyle, ...data } = this.$options.props;
+        const { containerStyle, src, alt, imgStyle, ...data } = this.$options.props;
         const props = {};
 
         for (const key in data) {

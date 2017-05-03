@@ -66,7 +66,7 @@ const App = {
                         rotatable={true}
                         src={this.imgSrc}
                         alt="Source Image"
-                        imgStyle={{ width: '400px', 'height': '300px' }}
+                        img-style={{ width: '400px', 'height': '300px' }}
                         cropmove={this.cropImage}>
                     </vue-cropper>
                 </div>

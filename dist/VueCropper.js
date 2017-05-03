@@ -141,11 +141,11 @@ var CropperComponent = _vue2.default.extend({
     },
     mounted: function mounted() {
         var _$options$props = this.$options.props,
-            style = _$options$props.style,
+            containerStyle = _$options$props.containerStyle,
             src = _$options$props.src,
             alt = _$options$props.alt,
             imgStyle = _$options$props.imgStyle,
-            data = _objectWithoutProperties(_$options$props, ['style', 'src', 'alt', 'imgStyle']);
+            data = _objectWithoutProperties(_$options$props, ['containerStyle', 'src', 'alt', 'imgStyle']);
 
         var props = {};
 
