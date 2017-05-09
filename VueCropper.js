@@ -136,6 +136,9 @@ const CropperComponent = Vue.extend({
 
         this.cropper = new Cropper(this.$refs.img, props);
     },
+    updated: function () {
+        this.cropper.replace(this.src);
+    },
     methods: {
         reset() {
             return this.cropper.reset();
