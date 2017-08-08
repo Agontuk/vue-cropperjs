@@ -136,8 +136,8 @@ var CropperComponent = _vue2.default.extend({
         'cropstart': Function,
         'cropmove': Function,
         'cropend': Function,
-        'crop': Function
-        // 'zoom': Function
+        'crop': Function,
+        'zoom': Function
     },
     mounted: function mounted() {
         var _$options$props = this.$options.props,
@@ -183,7 +183,7 @@ var CropperComponent = _vue2.default.extend({
         moveTo: function moveTo(x, y) {
             return this.cropper.moveTo(x, y);
         },
-        zoom: function zoom(ratio, _originalEvent) {
+        relativeZoom: function relativeZoom(ratio, _originalEvent) {
             return this.cropper.zoom(ratio, _originalEvent);
         },
         zoomTo: function zoomTo(ratio, _originalEvent) {

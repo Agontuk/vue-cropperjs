@@ -121,8 +121,8 @@ const CropperComponent = Vue.extend({
         'cropstart': Function,
         'cropmove': Function,
         'cropend': Function,
-        'crop': Function
-        // 'zoom': Function
+        'crop': Function,
+        'zoom': Function
     },
     mounted() {
         const { containerStyle, src, alt, imgStyle, ...data } = this.$options.props;
@@ -161,7 +161,7 @@ const CropperComponent = Vue.extend({
         moveTo(x, y) {
             return this.cropper.moveTo(x, y);
         },
-        zoom(ratio, _originalEvent) {
+        relativeZoom(ratio, _originalEvent) {
             return this.cropper.zoom(ratio, _originalEvent);
         },
         zoomTo(ratio, _originalEvent) {
