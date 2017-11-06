@@ -33,15 +33,18 @@ var CropperComponent = _vue2.default.extend({
 
     props: {
         'containerStyle': Object,
-        'data': Object,
-        'preview': String,
         'src': {
             type: String,
             default: ''
         },
         'alt': String,
         'imgStyle': Object,
+
+        'viewMode': Number,
         'dragMode': String,
+        'aspectRatio': Number,
+        'data': Object,
+        'preview': String,
         'responsive': {
             type: Boolean,
             default: true
@@ -58,6 +61,56 @@ var CropperComponent = _vue2.default.extend({
             type: Boolean,
             default: true
         },
+        'modal': {
+            type: Boolean,
+            default: true
+        },
+        'guides': {
+            type: Boolean,
+            default: true
+        },
+        'center': {
+            type: Boolean,
+            default: true
+        },
+        'highlight': {
+            type: Boolean,
+            default: true
+        },
+        'background': {
+            type: Boolean,
+            default: true
+        },
+        'autoCrop': {
+            type: Boolean,
+            default: true
+        },
+        'autoCropArea': Number,
+        'movable': {
+            type: Boolean,
+            default: true
+        },
+        'rotatable': {
+            type: Boolean,
+            default: true
+        },
+        'scalable': {
+            type: Boolean,
+            default: true
+        },
+        'zoomable': {
+            type: Boolean,
+            default: true
+        },
+        'zoomOnTouch': {
+            type: Boolean,
+            default: true
+        },
+        'zoomOnWheel': {
+            type: Boolean,
+            default: true
+        },
+        'wheelZoomRatio': Number,
         'cropBoxMovable': {
             type: Boolean,
             default: true
@@ -70,58 +123,6 @@ var CropperComponent = _vue2.default.extend({
             type: Boolean,
             default: true
         },
-        'modal': {
-            type: Boolean,
-            default: true
-        },
-        'center': {
-            type: Boolean,
-            default: true
-        },
-        'highlight': {
-            type: Boolean,
-            default: true
-        },
-        'zoomOnTouch': {
-            type: Boolean,
-            default: true
-        },
-        'zoomOnWheel': {
-            type: Boolean,
-            default: true
-        },
-        'scalable': {
-            type: Boolean,
-            default: true
-        },
-        'zoomable': {
-            type: Boolean,
-            default: true
-        },
-        'guides': {
-            type: Boolean,
-            default: true
-        },
-        'background': {
-            type: Boolean,
-            default: true
-        },
-        'autoCrop': {
-            type: Boolean,
-            default: true
-        },
-        'movable': {
-            type: Boolean,
-            default: true
-        },
-        'rotatable': {
-            type: Boolean,
-            default: true
-        },
-        'viewMode': Number,
-        'aspectRatio': Number,
-        'autoCropArea': Number,
-        'wheelZoomRatio': Number,
 
         'minCanvasWidth': Number,
         'minCanvasHeight': Number,
