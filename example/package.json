@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "vue": ">=2.0.0",
-    "vue-cropperjs": "^2.1.0"
+    "vue-cropperjs": "https://github.com/Agontuk/vue-cropperjs.git#master"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
