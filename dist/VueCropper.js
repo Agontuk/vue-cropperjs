@@ -123,7 +123,6 @@ var CropperComponent = _vue2.default.extend({
         'autoCropArea': Number,
         'wheelZoomRatio': Number,
 
-        // Size limitation
         'minCanvasWidth': Number,
         'minCanvasHeight': Number,
         'minCropBoxWidth': Number,
@@ -131,7 +130,6 @@ var CropperComponent = _vue2.default.extend({
         'minContainerWidth': Number,
         'minContainerHeight': Number,
 
-        // callbacks
         'ready': Function,
         'cropstart': Function,
         'cropmove': Function,
@@ -165,7 +163,9 @@ var CropperComponent = _vue2.default.extend({
         clear: function clear() {
             return this.cropper.clear();
         },
-        replace: function replace(url, onlyColorChanged) {
+        replace: function replace(url) {
+            var onlyColorChanged = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
             return this.cropper.replace(url, onlyColorChanged);
         },
         enable: function enable() {
@@ -180,7 +180,9 @@ var CropperComponent = _vue2.default.extend({
         move: function move(offsetX, offsetY) {
             return this.cropper.move(offsetX, offsetY);
         },
-        moveTo: function moveTo(x, y) {
+        moveTo: function moveTo(x) {
+            var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : x;
+
             return this.cropper.moveTo(x, y);
         },
         relativeZoom: function relativeZoom(ratio, _originalEvent) {
@@ -195,16 +197,20 @@ var CropperComponent = _vue2.default.extend({
         rotateTo: function rotateTo(degree) {
             return this.cropper.rotateTo(degree);
         },
-        scale: function scale(scaleX, scaleY) {
-            return this.cropper.scale(scaleX, scaleY);
-        },
         scaleX: function scaleX(_scaleX) {
             return this.cropper.scaleX(_scaleX);
         },
         scaleY: function scaleY(_scaleY) {
             return this.cropper.scaleY(_scaleY);
         },
-        getData: function getData(rounded) {
+        scale: function scale(scaleX) {
+            var scaleY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : scaleX;
+
+            return this.cropper.scale(scaleX, scaleY);
+        },
+        getData: function getData() {
+            var rounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
             return this.cropper.getData(rounded);
         },
         setData: function setData(data) {
@@ -228,7 +234,9 @@ var CropperComponent = _vue2.default.extend({
         setCropBoxData: function setCropBoxData(data) {
             return this.cropper.setCropBoxData(data);
         },
-        getCroppedCanvas: function getCroppedCanvas(options) {
+        getCroppedCanvas: function getCroppedCanvas() {
+            var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
             return this.cropper.getCroppedCanvas(options);
         },
         setAspectRatio: function setAspectRatio(aspectRatio) {
