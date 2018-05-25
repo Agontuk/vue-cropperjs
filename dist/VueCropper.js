@@ -164,6 +164,9 @@ var CropperComponent = _vue2.default.extend({
         clear: function clear() {
             return this.cropper.clear();
         },
+        initCrop: function initCrop() {
+            return this.cropper.crop();
+        },
         replace: function replace(url) {
             var onlyColorChanged = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 

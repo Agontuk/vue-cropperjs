@@ -150,6 +150,11 @@ const CropperComponent = Vue.extend({
             return this.cropper.clear();
         },
 
+        // Init crop box manually
+        initCrop() {
+            return this.cropper.crop();
+        },
+
         /**
          * Replace the image's src and rebuild the cropper
          * @param {string} url - The new URL.
