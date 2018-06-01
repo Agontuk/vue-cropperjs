@@ -53,7 +53,8 @@ const App = {
                     on-change={this.setImage}
                 />
                 <br />
-                <div style="max-width: 900px; display: inline-block;">
+                <br />
+                <div style="width: 400px; height:300px; border: 1px solid gray; display: inline-block;">
                     <vue-cropper
                         ref='cropper'
                         guides={true}
@@ -66,8 +67,7 @@ const App = {
                         rotatable={true}
                         src={this.imgSrc}
                         alt="Source Image"
-                        img-style={{ width: '400px', 'height': '300px' }}
-                        cropmove={this.cropImage}>
+                        img-style={{ width: '400px', 'height': '300px' }}>
                     </vue-cropper>
                 </div>
                 <img
@@ -76,7 +76,9 @@ const App = {
                     alt="Cropped Image"
                 />
                 <br />
+                <br />
 
+                { !!this.imgSrc && <button on-click={this.cropImage} style="margin-right: 40px;">Crop</button> }
                 { !!this.imgSrc && <button on-click={this.rotate}>Rotate</button> }
             </div>
         );
