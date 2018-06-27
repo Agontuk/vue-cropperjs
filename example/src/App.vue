@@ -7,12 +7,27 @@
            style="font-size: 1.2em; padding: 10px 0;"
            @change="setImage" />
     <br/>
-    <div style="max-width: 900px; display: inline-block;">
-      <vue-cropper ref='cropper' :src=imgSrc alt="Source Image" :cropmove="cropImage" ></vue-cropper>
+    <div style="width: 400px; height:300px; border: 1px solid gray; display: inline-block;">
+      <vue-cropper
+          ref='cropper'
+          :guides="true"
+          :view-mode="2"
+          drag-mode="crop"
+          :auto-crop-area="0.5"
+          :min-container-width="250"
+          :min-container-height="180"
+          :background="true"
+          :rotatable="true"
+          :src="imgSrc"
+          alt="Source Image"
+          :img-style="{ 'width': '400px', 'height': '300px' }">
+      </vue-cropper>
     </div>
     <img :src="cropImg" style="width: 200px; height: 150px; border: 1px solid gray" alt="Cropped Image" />
     <br/>
+    <br />
 
+    <button @click="cropImage" v-if="imgSrc != ''" style="margin-right: 40px;">Crop</button>
     <button @click="rotate" v-if="imgSrc != ''">Rotate</button>
   </div>
 
@@ -37,7 +52,7 @@
         const file = e.target.files[0];
 
         if (!file.type.includes('image/')) {
-          // alert('Please select an image file');
+          alert('Please select an image file');
           return;
         }
 
@@ -45,10 +60,8 @@
           const reader = new FileReader();
 
           reader.onload = (event) => {
-            console.log(event, 'event');
             this.imgSrc = event.target.result;
             // rebuild cropperjs with the updated source
-            console.log(this.$refs.cropper);
             this.$refs.cropper.replace(event.target.result);
           };
 

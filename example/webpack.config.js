@@ -12,13 +12,18 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.vue$/,
+        loader: 'vue',
+        exclude: /node_modules/
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'vue-style-loader!style-loader!css-loader'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -35,7 +40,12 @@ module.exports = {
     new HtmlWebpackPlugin({
         template: 'index.html'
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
