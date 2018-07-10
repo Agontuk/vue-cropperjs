@@ -31,7 +31,7 @@ const CropperComponent = Vue.extend({
         'dragMode': String,
         'aspectRatio': Number,
         'data': Object,
-        'preview': String,
+        'preview': [String, Array, Element, NodeList],
         'responsive': {
             type: Boolean,
             default: true
