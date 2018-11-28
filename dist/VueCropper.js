@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = require('vue');
-
-var _vue2 = _interopRequireDefault(_vue);
-
 var _cropperjs = require('cropperjs');
 
 var _cropperjs2 = _interopRequireDefault(_cropperjs);
@@ -18,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var CropperComponent = {
+exports.default = {
   render: function render(h) {
     return h('div', { style: this.containerStyle }, [h('img', {
       ref: 'img',
@@ -251,7 +247,3 @@ var CropperComponent = {
     }
   }
 };
-
-var VueCropper = _vue2.default.component('vue-cropper', CropperComponent);
-
-exports.default = VueCropper;
