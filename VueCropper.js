@@ -1,8 +1,7 @@
-import Vue from 'vue'
 import Cropper from 'cropperjs'
 import 'cropperjs/dist/cropper.css'
 
-const CropperComponent = {
+export default {
   render(h) {
     return h('div', { style: this.containerStyle }, [
       h('img', {
@@ -362,7 +361,3 @@ const CropperComponent = {
     }
   }
 }
-
-const VueCropper = Vue.component('vue-cropper', CropperComponent)
-
-export default VueCropper
