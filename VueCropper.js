@@ -136,6 +136,8 @@ export default {
       }
     }
 
+    this.registerEvents()
+
     this.cropper = new Cropper(this.$refs.img, props)
   },
   methods: {
@@ -358,6 +360,47 @@ export default {
      */
     setDragMode(mode) {
       return this.cropper.setDragMode(mode)
+    },
+
+    /**
+     * Register events suported by cropperjs and link to callback functions
+     */
+    registerEvents() {
+      if (this.ready) {
+        this.$refs.img.addEventListener('ready', event => {
+          this.ready(event)
+        })
+      }
+
+      if (this.cropstart) {
+        this.$refs.img.addEventListener('cropstart', event => {
+          this.cropstart(event)
+        })
+      }
+
+      if (this.cropmove) {
+        this.$refs.img.addEventListener('cropmove', event => {
+          this.cropmove(event)
+        })
+      }
+
+      if (this.cropend) {
+        this.$refs.img.addEventListener('cropend', event => {
+          this.cropend(event)
+        })
+      }
+
+      if (this.crop) {
+        this.$refs.img.addEventListener('crop', event => {
+          this.crop(event)
+        })
+      }
+
+      if (this.zoom) {
+        this.$refs.img.addEventListener('zoom', event => {
+          this.zoom(event)
+        })
+      }
     }
   }
 }
