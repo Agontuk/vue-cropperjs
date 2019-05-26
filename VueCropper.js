@@ -1,5 +1,4 @@
 import Cropper from 'cropperjs'
-import 'cropperjs/dist/cropper.css'
 
 const previewPropType = typeof window === 'undefined'
   ? [String, Array]
