@@ -14,6 +14,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+var previewPropType = typeof window === 'undefined' ? [String, Array] : [String, Array, Element, NodeList];
+
 exports.default = {
   render: function render(h) {
     return h('div', { style: this.containerStyle }, [h('img', {
@@ -40,7 +42,7 @@ exports.default = {
     dragMode: String,
     aspectRatio: Number,
     data: Object,
-    preview: [String, Array, Element, NodeList],
+    preview: previewPropType,
     responsive: {
       type: Boolean,
       default: true
