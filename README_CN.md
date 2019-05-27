@@ -1,10 +1,11 @@
 # vue-cropperjs
-基于[cropperjs](https://github.com/fengyuanchen/cropperjs)封装的Vue图片裁剪组件。
+
+一个Vue包装组件，基于[cropperjs](https://github.com/fengyuanchen/cropperjs)。
 
 [![NPM](https://nodei.co/npm/vue-cropperjs.png?downloads=true)](https://nodei.co/npm/vue-cropperjs/)
 
-## 示例
-点击这里：**[agontuk.github.io/vue-cropperjs](https://agontuk.github.io/vue-cropperjs/)**
+## Demo
+查看这里 **[agontuk.github.io/vue-cropperjs](https://agontuk.github.io/vue-cropperjs/)**
 
 ## 安装
 
@@ -45,7 +46,7 @@ export default {
 
 this.$refs.cropper.rotate(45);
 ```
-可以查看[example](https://github.com/Agontuk/vue-cropperjs/tree/master/example) 文件 和 [cropperjs](https://github.com/fengyuanchen/cropperjs#cropperjs) 文档
+查看 [样例](https://github.com/Agontuk/vue-cropperjs/tree/master/example) 文件夹 和 [cropperjs](https://github.com/fengyuanchen/cropperjs#cropperjs) 文档
 
 ## 选项
 
@@ -56,13 +57,13 @@ this.$refs.cropper.rotate(45);
 | imgStyle       | `object` | --       | 图片的样式          |
 | alt            | `string` | --       | 图片的alt文本   |
 
-## cropperjs相关
-查看 [cropperjs文档](https://github.com/fengyuanchen/cropperjs#options) 查看更多的属性和方法。
+## Crop相关可选项
+查看cropperjs [文档](https://github.com/fengyuanchen/cropperjs#options) 获得所有的可选项和方法。
 
 ## 重命名方法
 
-- `zoom` -> `relativeZoom`
-- `crop` -> `initCrop`
+- `relativeZoom` 源于 `zoom`
+- `initCrop` 源于 `crop`
 
 ## License
 
