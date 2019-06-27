@@ -28,10 +28,12 @@ npm install --save vue-cropperjs@1.0.3
 // Global
 import Vue from 'vue';
 import VueCropper from 'vue-cropperjs';
+import 'cropperjs/dist/cropper.css';
 Vue.component(VueCropper);
 
 // Local
 import VueCropper from 'vue-cropperjs';
+import 'cropperjs/dist/cropper.css';
 export default {
   components: { VueCropper}
 }

@@ -1,5 +1,8 @@
 import Cropper from 'cropperjs'
-import 'cropperjs/dist/cropper.css'
+
+const previewPropType = typeof window === 'undefined'
+  ? [String, Array]
+  : [String, Array, Element, NodeList]
 
 export default {
   render(h) {
@@ -30,7 +33,7 @@ export default {
     dragMode: String,
     aspectRatio: Number,
     data: Object,
-    preview: [String, Array, Element, NodeList],
+    preview: previewPropType,
     responsive: {
       type: Boolean,
       default: true
