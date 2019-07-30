@@ -36,7 +36,7 @@
 <script>
   import VueCropper from 'vue-cropperjs';
   import { includes } from "string.prototype.includes";
-
+  import 'cropperjs/dist/cropper.css';
 
   export default {
     components: {
