@@ -1,26 +1,26 @@
-import Cropper from 'cropperjs'
-import 'cropperjs/dist/cropper.css'
+import Cropper from "cropperjs";
+import "cropperjs/dist/cropper.css";
 
 export default {
   render(h) {
-    return h('div', { style: this.containerStyle }, [
-      h('img', {
-        ref: 'img',
+    return h("div", { style: this.containerStyle }, [
+      h("img", {
+        ref: "img",
         attrs: {
           src: this.src,
-          alt: this.alt || 'image',
-          style: 'max-width: 100%'
+          alt: this.alt || "image",
+          style: "max-width: 100%"
         },
         style: this.imgStyle
       })
-    ])
+    ]);
   },
   props: {
     // Library props
     containerStyle: Object,
     src: {
       type: String,
-      default: ''
+      default: ""
     },
     alt: String,
     imgStyle: Object,
@@ -127,31 +127,34 @@ export default {
     zoom: Function
   },
   mounted() {
-    const { containerStyle, src, alt, imgStyle, ...data } = this.$options.props
-    const props = {}
+    const { containerStyle, src, alt, imgStyle, ...data } = this.$options.props;
+    const props = {};
 
     for (const key in data) {
       if (this[key] !== undefined) {
-        props[key] = this[key]
+        props[key] = this[key];
       }
     }
 
-    this.cropper = new Cropper(this.$refs.img, props)
+    this.cropper = new Cropper(this.$refs.img, props);
+  },
+  beforeDestory() {
+    this.cropper.destroy();
   },
   methods: {
     // Reset the image and crop box to their initial states
     reset() {
-      return this.cropper.reset()
+      return this.cropper.reset();
     },
 
     // Clear the crop box
     clear() {
-      return this.cropper.clear()
+      return this.cropper.clear();
     },
 
     // Init crop box manually
     initCrop() {
-      return this.cropper.crop()
+      return this.cropper.crop();
     },
 
     /**
@@ -161,22 +164,22 @@ export default {
      * @returns {Object} this
      */
     replace(url, onlyColorChanged = false) {
-      return this.cropper.replace(url, onlyColorChanged)
+      return this.cropper.replace(url, onlyColorChanged);
     },
 
     // Enable (unfreeze) the cropper
     enable() {
-      return this.cropper.enable()
+      return this.cropper.enable();
     },
 
     // Disable (freeze) the cropper
     disable() {
-      return this.cropper.disable()
+      return this.cropper.disable();
     },
 
     // Destroy the cropper and remove the instance from the image
     destroy() {
-      return this.cropper.destroy()
+      return this.cropper.destroy();
     },
 
     /**
@@ -186,7 +189,7 @@ export default {
      * @returns {Object} this
      */
     move(offsetX, offsetY) {
-      return this.cropper.move(offsetX, offsetY)
+      return this.cropper.move(offsetX, offsetY);
     },
 
     /**
@@ -196,7 +199,7 @@ export default {
      * @returns {Object} this
      */
     moveTo(x, y = x) {
-      return this.cropper.moveTo(x, y)
+      return this.cropper.moveTo(x, y);
     },
 
     /**
@@ -206,7 +209,7 @@ export default {
      * @returns {Object} this
      */
     relativeZoom(ratio, _originalEvent) {
-      return this.cropper.zoom(ratio, _originalEvent)
+      return this.cropper.zoom(ratio, _originalEvent);
     },
 
     /**
@@ -216,7 +219,7 @@ export default {
      * @returns {Object} this
      */
     zoomTo(ratio, _originalEvent) {
-      return this.cropper.zoomTo(ratio, _originalEvent)
+      return this.cropper.zoomTo(ratio, _originalEvent);
     },
 
     /**
@@ -225,7 +228,7 @@ export default {
      * @returns {Object} this
      */
     rotate(degree) {
-      return this.cropper.rotate(degree)
+      return this.cropper.rotate(degree);
     },
 
     /**
@@ -234,7 +237,7 @@ export default {
      * @returns {Object} this
      */
     rotateTo(degree) {
-      return this.cropper.rotateTo(degree)
+      return this.cropper.rotateTo(degree);
     },
 
     /**
@@ -243,7 +246,7 @@ export default {
      * @returns {Object} this
      */
     scaleX(scaleX) {
-      return this.cropper.scaleX(scaleX)
+      return this.cropper.scaleX(scaleX);
     },
 
     /**
@@ -252,7 +255,7 @@ export default {
      * @returns {Object} this
      */
     scaleY(scaleY) {
-      return this.cropper.scaleY(scaleY)
+      return this.cropper.scaleY(scaleY);
     },
 
     /**
@@ -262,7 +265,7 @@ export default {
      * @returns {Object} this
      */
     scale(scaleX, scaleY = scaleX) {
-      return this.cropper.scale(scaleX, scaleY)
+      return this.cropper.scale(scaleX, scaleY);
     },
 
     /**
@@ -271,7 +274,7 @@ export default {
      * @returns {Object} The result cropped data.
      */
     getData(rounded = false) {
-      return this.cropper.getData(rounded)
+      return this.cropper.getData(rounded);
     },
 
     /**
@@ -280,7 +283,7 @@ export default {
      * @returns {Object} this
      */
     setData(data) {
-      return this.cropper.setData(data)
+      return this.cropper.setData(data);
     },
 
     /**
@@ -288,7 +291,7 @@ export default {
      * @returns {Object} The result container data.
      */
     getContainerData() {
-      return this.cropper.getContainerData()
+      return this.cropper.getContainerData();
     },
 
     /**
@@ -296,7 +299,7 @@ export default {
      * @returns {Object} The result image data.
      */
     getImageData() {
-      return this.cropper.getImageData()
+      return this.cropper.getImageData();
     },
 
     /**
@@ -304,7 +307,7 @@ export default {
      * @returns {Object} The result canvas data.
      */
     getCanvasData() {
-      return this.cropper.getCanvasData()
+      return this.cropper.getCanvasData();
     },
 
     /**
@@ -313,7 +316,7 @@ export default {
      * @returns {Object} this
      */
     setCanvasData(data) {
-      return this.cropper.setCanvasData(data)
+      return this.cropper.setCanvasData(data);
     },
 
     /**
@@ -321,7 +324,7 @@ export default {
      * @returns {Object} The result crop box data.
      */
     getCropBoxData() {
-      return this.cropper.getCropBoxData()
+      return this.cropper.getCropBoxData();
     },
 
     /**
@@ -330,7 +333,7 @@ export default {
      * @returns {Object} this
      */
     setCropBoxData(data) {
-      return this.cropper.setCropBoxData(data)
+      return this.cropper.setCropBoxData(data);
     },
 
     /**
@@ -339,7 +342,7 @@ export default {
      * @returns {HTMLCanvasElement} - The result canvas.
      */
     getCroppedCanvas(options = {}) {
-      return this.cropper.getCroppedCanvas(options)
+      return this.cropper.getCroppedCanvas(options);
     },
 
     /**
@@ -348,7 +351,7 @@ export default {
      * @returns {Object} this
      */
     setAspectRatio(aspectRatio) {
-      return this.cropper.setAspectRatio(aspectRatio)
+      return this.cropper.setAspectRatio(aspectRatio);
     },
 
     /**
@@ -357,7 +360,7 @@ export default {
      * @returns {Object} this
      */
     setDragMode(mode) {
-      return this.cropper.setDragMode(mode)
+      return this.cropper.setDragMode(mode);
     }
   }
-}
+};
