@@ -138,7 +138,7 @@ export default {
 
     this.cropper = new Cropper(this.$refs.img, props)
   },
-  beforeDestory() {
+  beforeDestroy() {
     this.cropper.destroy()
   },
   methods: {
