@@ -1,7 +1,0 @@
-{
-    "presets": ["es2015"],
-    "plugins": [
-        "transform-vue-jsx",
-        "vue-jsx-hot-reload"
-    ]
-}
