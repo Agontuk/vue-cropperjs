@@ -31,6 +31,7 @@ export default {
     // CropperJS props
     viewMode: Number,
     dragMode: String,
+    initialAspectRatio: Number,
     aspectRatio: Number,
     data: Object,
     preview: previewPropType,
