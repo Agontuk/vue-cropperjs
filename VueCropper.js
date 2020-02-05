@@ -121,18 +121,14 @@ export default {
     minCropBoxHeight: Number,
     minContainerWidth: Number,
     minContainerHeight: Number,
-
-    // callbacks
-    ready: Function,
-    cropstart: Function,
-    cropmove: Function,
-    cropend: Function,
-    crop: Function,
-    zoom: Function
   },
   mounted() {
     const { containerStyle, src, alt, imgStyle, ...data } = this.$options.props
     const props = {}
+
+    for (var event in this.$listeners) {
+      props[event] = this.$listeners[event]
+    }
 
     for (const key in data) {
       if (this[key] !== undefined) {
