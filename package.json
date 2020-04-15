@@ -1,6 +1,6 @@
 {
   "name": "vue-cropperjs",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "A Vue wrapper component for cropperjs",
   "main": "dist/VueCropper.js",
   "keywords": [
