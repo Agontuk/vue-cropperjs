@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.1.0 (April 16, 2020)
+ - Add events support
+ - Fix `initialAspectRatio` not being included in dist file
+ - Update cropperjs version
+
 ### 4.0.0 (May 26, 2018)
  - BREAKING: Remove default css import
  - Fix preview prop error in SSR
