@@ -43,7 +43,12 @@ export default {
   ref="cropper"
   :src="imgSrc"
   alt="Source Image"
-  :cropmove="cropImage"
+  @ready="..."
+  @cropstart="..."
+  @cropmove="..."
+  @cropend="..."
+  @crop="..."
+  @zoom="..."
 >
 </vue-cropper>
 ...
