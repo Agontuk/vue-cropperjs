@@ -14,6 +14,7 @@ export default {
           alt: this.alt || 'image',
           style: 'max-width: 100%'
         },
+        on: this.$listeners,
         style: this.imgStyle
       })
     ])

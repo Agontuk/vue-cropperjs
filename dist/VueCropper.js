@@ -23,6 +23,7 @@ exports.default = {
         alt: this.alt || 'image',
         style: 'max-width: 100%'
       },
+      on: this.$listeners,
       style: this.imgStyle
     })]);
   },
@@ -38,6 +39,7 @@ exports.default = {
 
     viewMode: Number,
     dragMode: String,
+    initialAspectRatio: Number,
     aspectRatio: Number,
     data: Object,
     preview: previewPropType,
