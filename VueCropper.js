@@ -6,13 +6,16 @@ const previewPropType = typeof window === 'undefined'
 
 export default {
   render(h) {
+    const crossorigin = this.crossorigin || undefined;
+    
     return h('div', { style: this.containerStyle }, [
       h('img', {
         ref: 'img',
         attrs: {
           src: this.src,
           alt: this.alt || 'image',
-          style: 'max-width: 100%'
+          style: 'max-width: 100%',
+          crossorigin
         },
         on: this.$listeners,
         style: this.imgStyle
@@ -51,6 +54,9 @@ export default {
     checkOrientation: {
       type: Boolean,
       default: true
+    },
+    crossorigin: {
+      type: String,
     },
     modal: {
       type: Boolean,
