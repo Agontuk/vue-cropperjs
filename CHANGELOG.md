@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.2.0 (December 10, 2020)
+ - add optional `crossorigin` attribute to image
+
 ### 4.1.0 (April 16, 2020)
  - Add events support
  - Fix `initialAspectRatio` not being included in dist file
