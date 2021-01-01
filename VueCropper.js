@@ -1,3 +1,4 @@
+import { h } from 'vue'
 import Cropper from 'cropperjs'
 
 const previewPropType = typeof window === 'undefined'
@@ -5,20 +6,19 @@ const previewPropType = typeof window === 'undefined'
   : [String, Array, Element, NodeList]
 
 export default {
-  render(h) {
+  render() {
     const crossorigin = this.crossorigin || undefined;
-    
+
     return h('div', { style: this.containerStyle }, [
       h('img', {
         ref: 'img',
-        attrs: {
-          src: this.src,
-          alt: this.alt || 'image',
-          style: 'max-width: 100%',
-          crossorigin
-        },
-        on: this.$listeners,
-        style: this.imgStyle
+        src: this.src,
+        alt: this.alt || 'image',
+        style: [
+          { 'max-width': '100%' },
+          this.imgStyle
+        ],
+        crossorigin,
       })
     ])
   },

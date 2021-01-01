@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _vue = require('vue');
+
 var _cropperjs = require('cropperjs');
 
 var _cropperjs2 = _interopRequireDefault(_cropperjs);
@@ -15,19 +17,15 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 var previewPropType = typeof window === 'undefined' ? [String, Array] : [String, Array, Element, NodeList];
 
 exports.default = {
-  render: function render(h) {
+  render: function render() {
     var crossorigin = this.crossorigin || undefined;
 
-    return h('div', { style: this.containerStyle }, [h('img', {
+    return (0, _vue.h)('div', { style: this.containerStyle }, [(0, _vue.h)('img', {
       ref: 'img',
-      attrs: {
-        src: this.src,
-        alt: this.alt || 'image',
-        style: 'max-width: 100%',
-        crossorigin: crossorigin
-      },
-      on: this.$listeners,
-      style: this.imgStyle
+      src: this.src,
+      alt: this.alt || 'image',
+      style: [{ 'max-width': '100%' }, this.imgStyle],
+      crossorigin: crossorigin
     })]);
   },
 
