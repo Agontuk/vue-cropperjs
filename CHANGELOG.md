@@ -1,5 +1,8 @@
 # Changelog
 
+### 5.0.0 (February 1, 2021)
+ - add vue 3 support
+
 ### 4.2.0 (December 10, 2020)
  - add optional `crossorigin` attribute to image
 

@@ -13,14 +13,18 @@ Checkout here **[agontuk.github.io/vue-cropperjs](https://agontuk.github.io/vue-
 ```shell
 npm install --save vue-cropperjs
 ```
-
-For Vue 1.0, use
-
-```shell
-npm install --save vue-cropperjs@1.0.3
+or
 ```
-
+yarn add vue-cropperjs
+```
 > You will also need css & style loader for webpack
+
+# Compatibility
+| Vue Version | Package Version |
+| ---------- | --------------- |
+| 3.x.x      | >=5.0.0         |
+| 2.x.x      | 4.2.0           |
+| 1.x.x      | 1.0.3           |
 
 ## Usage
 
