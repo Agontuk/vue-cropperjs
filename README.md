@@ -82,7 +82,7 @@ See cropperjs [documentation](https://github.com/fengyuanchen/cropperjs#options)
 
 ## FAQ
 > How to set container height ?
-- You can set height in containerStyle option. Example: `<vue-cropper ref="cropper" containerStyle="max-height:60vh" />`
+- You can set height in containerStyle option. Example: `<vue-cropper ref="cropper" :containerStyle="{'max-height':'60vh'}" />`
 
 ## License
 
