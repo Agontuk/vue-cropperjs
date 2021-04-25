@@ -80,6 +80,10 @@ See cropperjs [documentation](https://github.com/fengyuanchen/cropperjs#options)
 - `relativeZoom` from `zoom`
 - `initCrop` from `crop`
 
+## FAQ
+> How to set container height ?
+- You can set height in containerStyle option. Example: `<vue-cropper ref="cropper" containerStyle="max-height:60vh" />`
+
 ## License
 
 MIT
