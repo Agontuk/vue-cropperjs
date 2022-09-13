@@ -70,6 +70,7 @@ See the [example](https://github.com/Agontuk/vue-cropperjs/tree/master/example) 
 | containerStyle | `object` | --       | Styling for the image container |
 | imgStyle       | `object` | --       | Styling for the image           |
 | alt            | `string` | --       | Alternate text for the image    |
+| crossorigin    | `string` | --       | Cross-origin for the image      |
 
 ## Crop related options
 
